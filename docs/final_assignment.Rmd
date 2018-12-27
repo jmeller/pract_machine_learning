@@ -21,7 +21,7 @@ lapply(c("tidyverse", "caret", "visdat"),
        function(lib) 
          suppressWarnings(suppressMessages(require(lib, character.only = T))))
 # parameters
-file.path <- "./data/"
+file.path <- "../data/"
 # data import
 training <- read_csv(paste0(file.path, "pml-training.csv"))
 testing <- read_csv(paste0(file.path, "pml-testing.csv"))
