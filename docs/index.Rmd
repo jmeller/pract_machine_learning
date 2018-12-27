@@ -26,17 +26,20 @@ testing <- read_csv(paste0(file.path, "pml-testing.csv"))
 # Exploratory analyses
 
 After loading the provided data set, I performed a first exploratory analysis. There exist five different classes according to which the movements were performed: A (exactly according to the specification), B (throwing the ellbows to the front), C (lifting the dumbbell only halfway), D (lowering the dumbbell only halfway) and E (throwing the hips to the front). As can be seen, classes are distributed almost equally over the training set. 
-```{r exp_raw_data, echo=FALSE, out.width='.49\\linewidth'}
+```{r exp_raw_data1, echo=FALSE, out.width='.45\\linewidth'}
 table(training$classe)
-training[sample(1:nrow(training), 100),] %>% vis_dat(sort_type = T) # we see that a lot of the feature data is missing
+```
+
+Moreover, I noted a considerable amount of missing values as shown in the graph below.
+```{r exp_raw_data2, echo=FALSE}
 ## calculate fill rates
 na_perc <- function(col){sum(is.na(col))/nrow(col)}
 fill.col <- 1 - sapply(1:ncol(training), function(col_idx){
   training[, col_idx] %>% na_perc
   })
-```
 
-Moreover, I noted a considerable amount of missing values as shown in the graph above.
+training[sample(1:nrow(training), 100),] %>% vis_dat(sort_type = T) # we see that a lot of the feature data is missing
+```
 
 # Data Preprocessing
 
