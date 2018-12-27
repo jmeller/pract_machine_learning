@@ -2,11 +2,7 @@
 title: "Predicting the Quality of Execution of Weightlifting Exercises"
 author: "Jan"
 subtitle: Practical Machine Learning Course Project
-output:
-  html_document:
-    df_print: paged
-  html_notebook: default
-  pdf_document: default
+output: github_document
 ---
 
 
@@ -92,8 +88,8 @@ ctrl <- trainControl(
 )
 
 # xgb
-if(file.exists("model_xgb.rds")){
-  model.xgb <- readRDS("model_xgb.rds")
+if(file.exists("../models/model_xgb.rds")){
+  model.xgb <- readRDS("../models/model_xgb.rds")
 } else {
   xgb.grid <- expand.grid(nrounds = c(50, 100, 150), 
                           max_depth = c(6, 7, 8), eta = 0.3, 
@@ -106,15 +102,15 @@ if(file.exists("model_xgb.rds")){
                      trControl = ctrl,
                      tuneGrid = xgb.grid)
   model.xgb
-  saveRDS(model.xgb, file = "model_xgb.rds")
+  saveRDS(model.xgb, file = "../models/model_xgb.rds")
 }
 ```
 
 Similarly, I trained a random forest model and also chose the best model configuration based on the accuracy measure over a five-fold cross-validation.
 
 ```{r pred_model_ranger}
-if(file.exists("model_ranger.rds")){
-  model.ranger <- readRDS("model_ranger.rds")
+if(file.exists("../models/model_ranger.rds")){
+  model.ranger <- readRDS("../models/model_ranger.rds")
 } else {
   ranger.grid <- expand.grid(mtry = 5:20, splitrule = "gini", 
                              min.node.size = c(1, 3, 5))
@@ -124,7 +120,7 @@ if(file.exists("model_ranger.rds")){
                         trControl = ctrl, 
                         tuneGrid = ranger.grid)
   model.ranger
-  saveRDS(model.ranger, file = "model_ranger.rds")
+  saveRDS(model.ranger, file = "../models/model_ranger.rds")
 }
 ```
 
