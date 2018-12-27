@@ -1,3 +1,4 @@
 final_assignment.pdf
 *.rds
 *.csv
+.Rproj.user/

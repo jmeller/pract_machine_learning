@@ -165,3 +165,4 @@ predictions <- predict(model.ranger, newdata = testing_preproc)
 # Conclusion
 
 The outcome of the machine learning project suggests that the quality of weightlifting movements can be predicted based on gyrosensor measurements with a very high accuracy. Out of two very well performing classification models, the random forest was slightly superior and achieved a 99.9\% out-of-sample accuracy measured with five-fold cross-validation.
+
