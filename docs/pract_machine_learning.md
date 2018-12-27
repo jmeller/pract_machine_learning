@@ -15,7 +15,7 @@ After loading the provided data set, I performed a first exploratory analysis. T
     ##    A    B    C    D    E 
     ## 5580 3797 3422 3216 3607
 
-<img src="final_assignment_files/figure-markdown_github/exp_raw_data-1.png" width=".49\linewidth" />
+<img src="pract_machine_learning_files/figure-markdown_github/exp_raw_data-1.png" width=".49\linewidth" />
 
 Moreover, I noted a considerable amount of missing values as shown in the graph above.
 
@@ -56,7 +56,7 @@ training_preproc <- merge(training_preproc, training_imputed, by = "X1") %>% sel
 training_preproc[sample(1:nrow(training_preproc), 100),] %>% vis_dat(sort_type = T)
 ```
 
-![](final_assignment_files/figure-markdown_github/data_preprocessing-1.png)
+![](pract_machine_learning_files/figure-markdown_github/data_preprocessing-1.png)
 
 Predictive modeling
 ===================
