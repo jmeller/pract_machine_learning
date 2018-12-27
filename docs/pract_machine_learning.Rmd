@@ -2,9 +2,7 @@
 title: "Predicting the Quality of Execution of Weightlifting Exercises"
 author: "Jan"
 subtitle: Practical Machine Learning Course Project
-output:
-  md_document:
-    variant: markdown_github
+output: github_document
 ---
 
 
