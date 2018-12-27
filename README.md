@@ -1,4 +1,3 @@
-# pract_machine_learning
 Executive Summary
 =================
 
