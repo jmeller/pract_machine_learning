@@ -246,7 +246,30 @@ testing_imputed <- testing %>% select(c(1, na.cols)) %>%
 
 testing_preproc <- merge(testing_preproc, testing_imputed, by = "X1") %>% select(-"X1")
 predictions <- predict(model.ranger, newdata = testing_preproc)
+data.frame(testing$X1, predictions)
 ```
+
+    ##    testing.X1 predictions
+    ## 1           1           B
+    ## 2           2           A
+    ## 3           3           B
+    ## 4           4           A
+    ## 5           5           A
+    ## 6           6           E
+    ## 7           7           D
+    ## 8           8           B
+    ## 9           9           A
+    ## 10         10           A
+    ## 11         11           B
+    ## 12         12           C
+    ## 13         13           B
+    ## 14         14           A
+    ## 15         15           E
+    ## 16         16           E
+    ## 17         17           A
+    ## 18         18           B
+    ## 19         19           B
+    ## 20         20           B
 
 Conclusion
 ==========
