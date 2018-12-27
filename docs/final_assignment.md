@@ -1,7 +1,3 @@
-Predicting the Quality of Execution of Weightlifting Exercises
-================
-Jan
-
 Executive Summary
 =================
 
